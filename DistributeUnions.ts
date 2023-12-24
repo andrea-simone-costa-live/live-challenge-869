@@ -25,8 +25,6 @@ type _DistributeUnions<T> = {
   }
 }
 
-type test = UnionToIntersection<_DistributeUnions<[1 | 2, 'a' | 'b']>[number]>
-
 type DistributeUnions<
   T,
   DT = { [K in keyof T]: DistributeUnions<T[K]> }
